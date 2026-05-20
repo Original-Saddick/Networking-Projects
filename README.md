@@ -146,7 +146,48 @@ ICMP ping testing was used to verify communication between hosts within the same
 ### Example Verification Command
 
 ```bash
-ping 192.168.10.2
+Cisco Packet Tracer PC Command Line 1.0
+C:\>ping 192.168.20.4
+
+Pinging 192.168.20.4 with 32 bytes of data:
+
+Reply from 192.168.20.4: bytes=32 time<1ms TTL=128
+Reply from 192.168.20.4: bytes=32 time<1ms TTL=128
+Reply from 192.168.20.4: bytes=32 time=4ms TTL=128
+Reply from 192.168.20.4: bytes=32 time<1ms TTL=128
+
+Ping statistics for 192.168.20.4:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 4ms, Average = 1ms
+
+C:\>ping 192.168.20.1
+
+Pinging 192.168.20.1 with 32 bytes of data:
+
+Reply from 192.168.20.1: bytes=32 time<1ms TTL=128
+Reply from 192.168.20.1: bytes=32 time=5ms TTL=128
+Reply from 192.168.20.1: bytes=32 time<1ms TTL=128
+Reply from 192.168.20.1: bytes=32 time=1ms TTL=128
+
+Ping statistics for 192.168.20.1:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 5ms, Average = 1ms
+
+C:\>ping 192.168.20.2
+
+Pinging 192.168.20.2 with 32 bytes of data:
+
+Reply from 192.168.20.2: bytes=32 time<1ms TTL=128
+Reply from 192.168.20.2: bytes=32 time=5ms TTL=128
+Reply from 192.168.20.2: bytes=32 time<1ms TTL=128
+Reply from 192.168.20.2: bytes=32 time<1ms TTL=128
+
+Ping statistics for 192.168.20.2:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 5ms, Average = 1ms
 ```
 
 ---
