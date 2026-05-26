@@ -1,0 +1,72 @@
+ SWITCH  CONFIGURATIONS
+Switch>
+Switch>
+Switch>EN
+Switch#config t
+
+Switch(config)#hostname SW1
+SW1(config)#vlan 10
+SW1(config-vlan)#name HR
+SW1(config-vlan)#exit
+
+
+SW1(config)#vlan 20
+SW1(config-vlan)#name FINANCE
+SW1(config-vlan)#exit
+
+SW1(config)#vlan 30
+SW1(config-vlan)#name IT
+SW1(config-vlan)#exit
+
+
+SW1(config)#int range fa0/1-2
+SW1(config-if-range)#sw mode access
+SW1(config-if-range)#sw access vlan 10
+SW1(config-if-range)#
+SW1(config-if-range)#exit
+
+
+SW1(config)#int range fa0/3-4
+SW1(config-if-range)#sw mode access
+SW1(config-if-range)#sw access vlan 20
+SW1(config-if-range)#exit
+
+
+SW1(config)#int range fa0/5-6
+SW1(config-if-range)#sw mode access
+SW1(config-if-range)#sw access vlan 30
+SW1(config-if-range)#exit
+
+
+SW1(config)#int range fa0/24
+SW1(config-if-range)#exit
+SW1(config)#int  fa0/24
+SW1(config-if)#sw mode trunk
+SW1(config-if)#exit
+
+
+ROUTER CONFIGURATIONS
+ 
+enable
+configure terminal
+
+ interface g0/0
+no shutdown
+exit
+
+interface g0/0.10
+encapsulation dot1Q 10
+ip address 192.168.10.254 255.255.255.0
+exit
+
+interface g0/0.20
+encapsulation dot1Q 20
+ip address 192.168.20.254 255.255.255.0
+exit
+
+interface g0/0.30
+encapsulation dot1Q 30
+ip address 192.168.30.254 255.255.255.0
+exit
+end
+copy running-config startup-config
